@@ -169,6 +169,14 @@ button, a { -webkit-tap-highlight-color: transparent; }
   .typewriter-line { min-height: 1.02em; }
 }
 
+/* O typewriter permanece funcional mesmo quando o dispositivo reduz outras animações. */
+@media (prefers-reduced-motion: reduce) {
+  .typewriter-caret {
+    animation-duration: 0.78s !important;
+    animation-iteration-count: infinite !important;
+  }
+}
+
 /* Webflow-inspired motion system */
 .wf-scroll-progress {
   position: fixed;

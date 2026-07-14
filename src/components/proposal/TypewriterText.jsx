@@ -22,12 +22,6 @@ export default function TypewriterText({ language = "pt" }) {
   const [deleting, setDeleting] = useState(false);
 
   useEffect(() => {
-    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    if (reduceMotion) {
-      setText(phrases[0]);
-      return undefined;
-    }
-
     const phrase = phrases[phraseIndex];
     const finishedTyping = !deleting && text === phrase;
     const finishedDeleting = deleting && text.length === 0;
