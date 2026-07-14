@@ -106,6 +106,8 @@ button, a { -webkit-tap-highlight-color: transparent; }
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
   }
+  .wf-pointer-glow { display: none; }
+  .wf-section, .wf-card { opacity: 1; transform: none; filter: none; }
 }
 
 .font-heading {
@@ -143,6 +145,79 @@ button, a { -webkit-tap-highlight-color: transparent; }
 
 .animate-spin-slow {
   animation: spin-slow 20s linear infinite;
+}
+
+/* Webflow-inspired motion system */
+.wf-scroll-progress {
+  position: fixed;
+  inset: 0 0 auto;
+  z-index: 9998;
+  height: 3px;
+  transform-origin: 0 50%;
+  background: linear-gradient(90deg, var(--coral), var(--coral-light), var(--gold));
+  box-shadow: 0 0 18px rgb(244 124 85 / 55%);
+}
+
+.wf-pointer-glow {
+  --wf-pointer-x: 50vw;
+  --wf-pointer-y: 25vh;
+  position: fixed;
+  inset: 0;
+  z-index: 45;
+  pointer-events: none;
+  background: radial-gradient(420px circle at var(--wf-pointer-x) var(--wf-pointer-y), rgb(244 124 85 / 9%), transparent 68%);
+  mix-blend-mode: screen;
+}
+
+.wf-section {
+  opacity: 0.72;
+  transform: translate3d(0, 42px, 0) scale(0.992);
+  filter: saturate(0.88);
+  transition: opacity 900ms cubic-bezier(0.16, 1, 0.3, 1), transform 1000ms cubic-bezier(0.16, 1, 0.3, 1), filter 900ms ease;
+  will-change: opacity, transform;
+}
+
+.wf-section.wf-visible {
+  opacity: 1;
+  transform: translate3d(0, 0, 0) scale(1);
+  filter: saturate(1);
+}
+
+.wf-card {
+  opacity: 0;
+  transform: translate3d(0, 22px, 0);
+  transition: opacity 700ms cubic-bezier(0.16, 1, 0.3, 1) var(--wf-stagger, 0ms), transform 700ms cubic-bezier(0.16, 1, 0.3, 1) var(--wf-stagger, 0ms), box-shadow 350ms ease, border-color 350ms ease !important;
+}
+
+.wf-card.wf-card-visible {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  #proposal-lp .wf-card:hover {
+    border-color: rgb(244 124 85 / 38%);
+    box-shadow: 0 24px 65px rgb(0 0 0 / 18%);
+  }
+  #proposal-lp figure.wf-card:hover { transform: translate3d(0, -6px, 0); }
+  #proposal-lp img { transition: transform 800ms cubic-bezier(0.16, 1, 0.3, 1), filter 500ms ease; }
+  #proposal-lp figure:hover img,
+  #proposal-lp .group:hover > img { filter: saturate(1.08) contrast(1.03); }
+}
+
+body.pdf-export-mode .wf-scroll-progress,
+body.pdf-export-mode .wf-pointer-glow { display: none !important; }
+
+body.pdf-export-mode .wf-section,
+body.pdf-export-mode .wf-card {
+  opacity: 1 !important;
+  transform: none !important;
+  filter: none !important;
+}
+
+@media (hover: none), (pointer: coarse) {
+  .wf-pointer-glow { display: none; }
+  .wf-section { transform: translate3d(0, 24px, 0); transition-duration: 650ms; }
 }
 
 /* Scroll snap for horizontal sections */

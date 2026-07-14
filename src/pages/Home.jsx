@@ -3,6 +3,7 @@ import LanguageGate from "@/components/proposal/LanguageGate";
 import ProposalTranslator from "@/components/proposal/ProposalTranslator";
 import StickyNav from "@/components/proposal/StickyNav";
 import PdfExportButton from "@/components/proposal/PdfExportButton";
+import WebflowMotion from "@/components/proposal/WebflowMotion";
 import Section01Hero from "@/components/proposal/Section01Hero";
 import Section02Apresentacao from "@/components/proposal/Section02Apresentacao";
 import Section03ProvaSocial from "@/components/proposal/Section03ProvaSocial";
@@ -29,6 +30,7 @@ export default function Home() {
   return (
     <ProposalTranslator language={language}>
     <div id="proposal-lp" className="min-h-screen" data-language={language}>
+      <WebflowMotion />
       <StickyNav />
       <PdfExportButton />
       <Section01Hero />
