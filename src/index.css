@@ -1,0 +1,183 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 3.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 3.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 3.9%;
+    --primary: 166 88% 14%;
+    --primary-foreground: 37 35% 93%;
+    --secondary: 16 88% 64%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 33 30% 90%;
+    --muted-foreground: 0 0% 45.1%;
+    --accent: 33 30% 90%;
+    --accent-foreground: 166 88% 14%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 33 20% 80%;
+    --input: 33 20% 80%;
+    --ring: 16 88% 64%;
+    --chart-1: 16 88% 64%;
+    --chart-2: 166 88% 14%;
+    --chart-3: 33 30% 90%;
+    --chart-4: 43 74% 66%;
+    --chart-5: 27 87% 67%;
+    --radius: 0.625rem;
+    --font-heading: 'Plus Jakarta Sans', ui-sans-serif, system-ui, sans-serif;
+    --font-body: 'Manrope', ui-sans-serif, system-ui, sans-serif;
+    --font-display: 'Plus Jakarta Sans', ui-sans-serif, system-ui, sans-serif;
+    --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 166 88% 14%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 16 88% 64%;
+
+    --petrol: #073F36;
+    --petrol-light: #2E6B5F;
+    --coral: #F47C55;
+    --coral-light: #FF9A78;
+    --offwhite: #F5EFE4;
+    --cream: #EFE4D3;
+    --gold: #D8C3A5;
+    --dark: #1E1E1E;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground font-body;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.font-heading {
+  font-family: var(--font-heading);
+}
+
+.font-body {
+  font-family: var(--font-body);
+}
+
+/* Organic line SVG animations */
+@keyframes float {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-10px) rotate(2deg); }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 0.6; }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 4s ease-in-out infinite;
+}
+
+/* Seal rotation */
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.animate-spin-slow {
+  animation: spin-slow 20s linear infinite;
+}
+
+/* Scroll snap for horizontal sections */
+.scroll-snap-x {
+  scroll-snap-type: x mandatory;
+}
+
+.scroll-snap-start {
+  scroll-snap-align: start;
+}
+
+body.pdf-export-mode #proposal-lp *,
+body.pdf-export-mode #proposal-lp *::before,
+body.pdf-export-mode #proposal-lp *::after {
+  animation: none !important;
+  transition: none !important;
+}
+
+body.pdf-export-mode #proposal-lp [style*="opacity: 0"] {
+  opacity: 1 !important;
+}
+
+body.pdf-export-mode #proposal-lp [style*="translate"],
+body.pdf-export-mode #proposal-lp [style*="matrix"] {
+  transform: none !important;
+}
+
+@media print {
+  @page {
+    size: 1440px 2036px;
+    margin: 0;
+  }
+
+  html,
+  body,
+  #root {
+    width: 100% !important;
+    min-height: auto !important;
+    background: #073F36 !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  body * {
+    visibility: hidden !important;
+  }
+
+  #proposal-lp,
+  #proposal-lp * {
+    visibility: visible !important;
+  }
+
+  #proposal-lp {
+    position: absolute !important;
+    inset: 0 auto auto 0 !important;
+    width: 1440px !important;
+    max-width: none !important;
+    min-height: auto !important;
+    overflow: visible !important;
+  }
+
+  nav,
+  .fixed,
+  [aria-label="Exportar proposta em PDF"] {
+    display: none !important;
+  }
+
+  #proposal-lp section {
+    break-inside: auto;
+    page-break-inside: auto;
+  }
+
+  #proposal-lp img {
+    max-width: 100% !important;
+    print-color-adjust: exact !important;
+    -webkit-print-color-adjust: exact !important;
+  }
+}
