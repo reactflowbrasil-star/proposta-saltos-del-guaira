@@ -6,6 +6,7 @@ import FloatingBadge from "@/components/proposal/FloatingBadge";
 import CtaButton from "@/components/proposal/CtaButton";
 import SectionFooter from "@/components/proposal/SectionFooter";
 import { eventMedia } from "@/components/proposal/eventMedia";
+import TypewriterText from "@/components/proposal/TypewriterText";
 
 const MASCOTE_IMG = eventMedia.hero;
 
@@ -15,7 +16,7 @@ const stats = [
   { icon: Crown, label: "Stand oficial", detail: "presenca premium" },
 ];
 
-export default function Section01Hero() {
+export default function Section01Hero({ language = "pt" }) {
   return (
     <section className="relative min-h-screen bg-petrol overflow-hidden flex flex-col">
       <OrganicLines variant="corner-tr" />
@@ -43,7 +44,7 @@ export default function Section01Hero() {
             <h1 className="font-heading font-extrabold text-4xl md:text-5xl lg:text-6xl xl:text-7xl leading-[1.02] tracking-tight mb-6 sm:mb-7">
               <span className="text-offwhite">SUA EMPRESA</span><br />
               <span className="text-offwhite">NA FESTA MAIS</span><br />
-              <span className="text-coral">ESPERADA DO ANO</span>
+              <TypewriterText language={language} />
             </h1>
 
             <p className="text-offwhite/75 font-body text-base sm:text-lg lg:text-xl leading-relaxed mb-7 max-w-xl">

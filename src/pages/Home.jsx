@@ -33,7 +33,7 @@ export default function Home() {
       <WebflowMotion />
       <StickyNav />
       <PdfExportButton />
-      <Section01Hero />
+      <Section01Hero language={language} />
       <Section02Apresentacao />
       <Section03ProvaSocial />
       <Section04Experiencia />

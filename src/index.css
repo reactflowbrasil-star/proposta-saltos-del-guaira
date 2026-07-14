@@ -147,6 +147,28 @@ button, a { -webkit-tap-highlight-color: transparent; }
   animation: spin-slow 20s linear infinite;
 }
 
+.typewriter-line {
+  display: inline-block;
+  min-height: 2.04em;
+}
+
+.typewriter-caret {
+  display: inline-block;
+  margin-left: 0.08em;
+  color: var(--gold);
+  font-weight: 500;
+  animation: typewriter-blink 0.78s steps(1, end) infinite;
+}
+
+@keyframes typewriter-blink {
+  0%, 46% { opacity: 1; }
+  47%, 100% { opacity: 0; }
+}
+
+@media (min-width: 1280px) {
+  .typewriter-line { min-height: 1.02em; }
+}
+
 /* Webflow-inspired motion system */
 .wf-scroll-progress {
   position: fixed;
