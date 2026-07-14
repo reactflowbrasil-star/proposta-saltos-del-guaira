@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 
 export default function IntroSplash({ onComplete }) {
   useEffect(() => {
-    const timer = window.setTimeout(onComplete, 2800);
+    const timer = window.setTimeout(onComplete, 6500);
     return () => window.clearTimeout(timer);
   }, [onComplete]);
 
