@@ -40,13 +40,20 @@ function translate(value, language) {
 }
 
 function translateRoot(root, language) {
-  const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT);
+  const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, {
+    acceptNode(node) {
+      return node.parentElement?.closest("[data-translation-managed]")
+        ? NodeFilter.FILTER_REJECT
+        : NodeFilter.FILTER_ACCEPT;
+    },
+  });
   let node;
   while ((node = walker.nextNode())) {
     if (!originals.has(node)) originals.set(node, node.nodeValue);
     node.nodeValue = translate(originals.get(node), language);
   }
   root.querySelectorAll("[alt], [aria-label], [title], [placeholder]").forEach((element) => {
+    if (element.closest("[data-translation-managed]")) return;
     ["alt", "aria-label", "title", "placeholder"].forEach((attribute) => {
       if (!element.hasAttribute(attribute)) return;
       const key = `data-original-${attribute}`;

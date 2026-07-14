@@ -56,7 +56,11 @@ export default function TypewriterText({ language = "pt" }) {
   }, [phrases]);
 
   return (
-    <span className="typewriter-line text-coral" aria-label={phrases[phraseIndex]}>
+    <span
+      className="typewriter-line text-coral"
+      aria-label={phrases[phraseIndex]}
+      data-translation-managed="true"
+    >
       <span aria-hidden="true">{text}</span>
       <span aria-hidden="true" className="typewriter-caret">|</span>
     </span>
