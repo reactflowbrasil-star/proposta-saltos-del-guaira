@@ -1,5 +1,7 @@
-import React, { useState } from "react";
+import React, { useCallback, useState } from "react";
+import { AnimatePresence } from "framer-motion";
 import LanguageGate from "@/components/proposal/LanguageGate";
+import IntroSplash from "@/components/proposal/IntroSplash";
 import ProposalTranslator from "@/components/proposal/ProposalTranslator";
 import StickyNav from "@/components/proposal/StickyNav";
 import PdfExportButton from "@/components/proposal/PdfExportButton";
@@ -21,13 +23,17 @@ import Section14Roteiro from "@/components/proposal/Section14Roteiro";
 import Section15Encerramento from "@/components/proposal/Section15Encerramento";
 
 export default function Home() {
+  const [showIntro, setShowIntro] = useState(true);
   const [language, setLanguage] = useState(null);
-
-  if (!language) {
-    return <LanguageGate onSelect={setLanguage} />;
-  }
+  const finishIntro = useCallback(() => setShowIntro(false), []);
 
   return (
+    <>
+    <AnimatePresence>
+      {showIntro && <IntroSplash key="intro-splash" onComplete={finishIntro} />}
+    </AnimatePresence>
+    {!showIntro && !language && <LanguageGate onSelect={setLanguage} />}
+    {!showIntro && language && (
     <ProposalTranslator language={language}>
     <div id="proposal-lp" className="min-h-screen" data-language={language}>
       <WebflowMotion />
@@ -50,5 +56,7 @@ export default function Home() {
       <Section15Encerramento />
     </div>
     </ProposalTranslator>
+    )}
+    </>
   );
 }
