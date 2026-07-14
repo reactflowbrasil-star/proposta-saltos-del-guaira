@@ -40,6 +40,7 @@ export default function PdfExportButton() {
       root
         .querySelectorAll(".fixed, nav, [aria-label^='Exportar']")
         .forEach((el) => {
+          if (!(el instanceof HTMLElement)) return;
           hidden.push([el, el.style.display]);
           el.style.display = "none";
         });
@@ -85,14 +86,14 @@ export default function PdfExportButton() {
       transition={{ delay: 1, type: "spring", stiffness: 260, damping: 20 }}
       whileHover={{ scale: status === "generating" ? 1 : 1.08 }}
       whileTap={{ scale: 0.95 }}
-      className="fixed bottom-6 left-6 z-50 group"
+      className="fixed bottom-4 left-4 sm:bottom-6 sm:left-6 z-50 group"
       aria-label="Exportar proposta em PDF"
     >
       {status === "idle" && (
         <span className="absolute inset-0 rounded-full bg-coral/40 animate-ping" />
       )}
 
-      <div className="relative w-14 h-14 bg-coral rounded-full flex items-center justify-center shadow-2xl shadow-coral/30 border-2 border-white/20">
+      <div className="relative w-11 h-11 sm:w-14 sm:h-14 bg-coral rounded-full flex items-center justify-center shadow-2xl shadow-coral/30 border-2 border-white/20">
         <AnimatePresence mode="wait">
           {status === "idle" && (
             <motion.span
@@ -132,7 +133,7 @@ export default function PdfExportButton() {
         <motion.div
           initial={{ opacity: 0, x: -10 }}
           whileHover={{ opacity: 1, x: 0 }}
-          className="absolute left-16 top-1/2 -translate-y-1/2 bg-petrol text-offwhite text-xs font-heading font-bold px-4 py-2 rounded-xl whitespace-nowrap shadow-xl opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none"
+          className="absolute left-14 sm:left-16 top-1/2 -translate-y-1/2 bg-petrol text-offwhite text-xs font-heading font-bold px-4 py-2 rounded-xl whitespace-nowrap shadow-xl opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none"
         >
           Baixar PDF da Proposta
         </motion.div>

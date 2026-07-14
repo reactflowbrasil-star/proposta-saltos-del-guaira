@@ -66,6 +66,46 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+body {
+  min-width: 320px;
+  overflow-x: hidden;
+}
+
+img, svg, video { max-width: 100%; }
+button, a { -webkit-tap-highlight-color: transparent; }
+
+#proposal-lp {
+  width: 100%;
+  overflow-x: clip;
+}
+
+#proposal-lp section > div,
+#proposal-lp .grid > *,
+#proposal-lp .flex > * { min-width: 0; }
+
+#proposal-lp h1,
+#proposal-lp h2,
+#proposal-lp h3,
+#proposal-lp p,
+#proposal-lp span { overflow-wrap: break-word; }
+
+@media (max-width: 639px) {
+  #proposal-lp section { scroll-margin-top: 3.5rem; }
+  #proposal-lp h1 { font-size: clamp(2.25rem, 11vw, 3.25rem); }
+  #proposal-lp h2 { font-size: clamp(1.85rem, 8.5vw, 2.6rem); }
+  #proposal-lp p { line-height: 1.65; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }
 
 .font-heading {

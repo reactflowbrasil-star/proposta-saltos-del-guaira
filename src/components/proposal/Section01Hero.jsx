@@ -23,7 +23,7 @@ export default function Section01Hero() {
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_18%,rgba(244,124,85,0.22),transparent_32%),linear-gradient(135deg,rgba(7,63,54,0.96),rgba(7,63,54,0.7)_44%,rgba(30,30,30,0.48))]" />
 
       <div className="relative z-10 flex-1 flex items-center">
-        <div className="relative grid w-full max-w-7xl grid-cols-1 lg:grid-cols-[minmax(360px,0.9fr)_minmax(0,1fr)] items-center gap-10 px-6 md:px-10 lg:px-16 xl:px-20 py-16 lg:py-24 mx-auto">
+        <div className="relative grid w-full max-w-7xl grid-cols-1 lg:grid-cols-[minmax(360px,0.9fr)_minmax(0,1fr)] items-center gap-9 px-5 pt-24 pb-10 sm:px-6 md:px-10 lg:px-16 xl:px-20 lg:py-24 mx-auto">
           <FloatingBadge
             text="VAGAS LIMITADAS"
             size="lg"
@@ -40,13 +40,13 @@ export default function Section01Hero() {
               Cota de participacao empresarial
             </span>
 
-            <h1 className="font-heading font-extrabold text-4xl md:text-5xl lg:text-6xl xl:text-7xl leading-none tracking-tight mb-7">
+            <h1 className="font-heading font-extrabold text-4xl md:text-5xl lg:text-6xl xl:text-7xl leading-[1.02] tracking-tight mb-6 sm:mb-7">
               <span className="text-offwhite">SUA EMPRESA</span><br />
               <span className="text-offwhite">NA FESTA MAIS</span><br />
               <span className="text-coral">ESPERADA DO ANO</span>
             </h1>
 
-            <p className="text-offwhite/75 font-body text-lg lg:text-xl leading-relaxed mb-7 max-w-xl">
+            <p className="text-offwhite/75 font-body text-base sm:text-lg lg:text-xl leading-relaxed mb-7 max-w-xl">
               Posicione sua marca dentro do stand oficial do 53o aniversario de Saltos del Guaira, com exposicao, relacionamento e experiencia VIP durante toda a festa.
             </p>
 
@@ -63,7 +63,7 @@ export default function Section01Hero() {
             <div className="flex flex-col sm:flex-row sm:items-center gap-5 mb-8">
               <div className="bg-petrol-light/35 border border-offwhite/10 rounded-3xl px-6 py-4">
                 <span className="text-gold text-xs font-heading tracking-widest uppercase">Investimento</span>
-                <p className="text-coral font-heading font-extrabold text-3xl lg:text-4xl mt-1">
+                <p className="text-coral font-heading font-extrabold text-[clamp(1.75rem,9vw,2.25rem)] lg:text-4xl mt-1">
                   Gs 5.000.000
                 </p>
               </div>
@@ -93,7 +93,7 @@ export default function Section01Hero() {
             <img
               src={MASCOTE_IMG}
               alt="Stand da Secretaria de Industria e Comercio"
-              className="w-[min(82vw,480px)] md:w-[520px] lg:w-full lg:h-full h-auto object-cover rounded-[2.5rem] border border-offwhite/15 drop-shadow-2xl"
+              className="w-full max-w-[480px] aspect-[4/5] md:w-[520px] lg:w-full lg:h-full lg:aspect-auto object-cover rounded-[1.75rem] sm:rounded-[2.5rem] border border-offwhite/15 drop-shadow-2xl"
             />
           </motion.div>
         </div>

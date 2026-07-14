@@ -22,7 +22,7 @@ export default function Section13ChamadaFinal() {
           alt="53 Anos Saltos del Guairá"
           className="h-20 w-auto object-contain mx-auto mb-8"
         />
-        <FloatingBadge text="VAGAS LIMITADAS" size="md" className="absolute -top-4 right-0 lg:right-8 z-20" />
+        <FloatingBadge text="VAGAS LIMITADAS" size="md" className="absolute -top-4 right-0 hidden sm:block lg:right-8 z-20" />
 
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -52,11 +52,11 @@ export default function Section13ChamadaFinal() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.3 }}
           viewport={{ once: true }}
-          className="flex gap-4 overflow-hidden rounded-4xl"
+          className="grid grid-cols-2 gap-3 overflow-hidden rounded-3xl sm:flex sm:gap-4 sm:rounded-4xl"
         >
-          <img src={IMG_HERO} alt="Evento" className="w-1/3 h-40 lg:h-52 object-cover rounded-3xl" />
-          <img src={IMG_CROWD} alt="Público" className="w-1/3 h-40 lg:h-52 object-cover rounded-3xl" />
-          <img src={IMG_HANDSHAKE} alt="Parceria" className="w-1/3 h-40 lg:h-52 object-cover rounded-3xl" />
+          <img src={IMG_HERO} alt="Evento" className="col-span-2 w-full h-44 sm:col-span-1 sm:w-1/3 sm:h-40 lg:h-52 object-cover rounded-2xl sm:rounded-3xl" />
+          <img src={IMG_CROWD} alt="Público" className="w-full h-36 sm:w-1/3 sm:h-40 lg:h-52 object-cover rounded-2xl sm:rounded-3xl" />
+          <img src={IMG_HANDSHAKE} alt="Parceria" className="w-full h-36 sm:w-1/3 sm:h-40 lg:h-52 object-cover rounded-2xl sm:rounded-3xl" />
         </motion.div>
       </div>
 

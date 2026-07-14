@@ -54,16 +54,16 @@ export default function Section10Comparativo() {
           transition={{ duration: 0.5, delay: 0.4 }}
           viewport={{ once: true }}
         >
-          <div className="bg-offwhite rounded-3xl p-6 flex items-center justify-between mb-4">
+          <div className="bg-offwhite rounded-3xl p-5 sm:p-6 flex flex-col items-start gap-2 sm:flex-row sm:items-center sm:justify-between mb-4">
             <span className="text-petrol font-heading font-bold text-lg">Valor estimado separado</span>
-            <span className="text-petrol/50 font-heading font-extrabold text-2xl line-through">Gs 10.500,00</span>
+            <span className="text-petrol/50 font-heading font-extrabold text-xl sm:text-2xl line-through">Gs 10.500,00</span>
           </div>
 
-          <div className="bg-coral rounded-4xl p-8 lg:p-10 text-center relative overflow-hidden">
+          <div className="bg-coral rounded-3xl p-5 sm:rounded-4xl sm:p-8 lg:p-10 text-center relative overflow-hidden">
             <OrganicLines variant="corner-tr" className="opacity-20" />
             <p className="text-white/80 font-heading font-bold text-sm tracking-widest uppercase mb-2">SEU INVESTIMENTO NO PACOTE</p>
-            <p className="text-white font-heading font-extrabold text-5xl lg:text-7xl mb-2">Gs 5.000.000</p>
-            <div className="inline-block bg-petrol rounded-full px-6 py-2 mt-4">
+            <p className="text-white font-heading font-extrabold text-[clamp(2rem,10vw,3rem)] lg:text-7xl mb-2">Gs 5.000.000</p>
+            <div className="inline-block max-w-full bg-petrol rounded-2xl sm:rounded-full px-4 sm:px-6 py-2 mt-4">
               <span className="text-coral font-heading font-bold text-sm">ECONOMIA DE Gs 500.000+</span>
             </div>
           </div>

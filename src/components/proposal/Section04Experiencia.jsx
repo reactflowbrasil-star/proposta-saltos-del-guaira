@@ -33,7 +33,7 @@ export default function Section04Experiencia() {
             <h2 className="font-heading font-extrabold text-3xl lg:text-4xl text-offwhite leading-tight mb-6">
               Transformando presença em <span className="text-coral">oportunidades reais.</span>
             </h2>
-            <p className="text-coral font-heading font-extrabold text-9xl lg:text-[10rem] leading-none">
+            <p className="text-coral font-heading font-extrabold text-8xl sm:text-9xl lg:text-[10rem] leading-none">
               7
             </p>
             <p className="text-offwhite/60 font-heading font-bold text-2xl -mt-2">dias</p>
@@ -50,7 +50,7 @@ export default function Section04Experiencia() {
             viewport={{ once: true }}
             className="lg:w-7/12"
           >
-            <div className="bg-offwhite rounded-4xl p-8 lg:p-12">
+            <div className="bg-offwhite rounded-3xl p-6 sm:rounded-4xl sm:p-8 lg:p-12">
               <h3 className="font-heading font-bold text-petrol text-xl mb-8">
                 O que cada dia de festa traz para sua empresa:
               </h3>
@@ -67,7 +67,7 @@ export default function Section04Experiencia() {
                     <div className="w-8 h-8 rounded-full bg-coral flex-shrink-0 flex items-center justify-center mt-0.5">
                       <Check className="w-4 h-4 text-white" />
                     </div>
-                    <p className="text-petrol font-body font-medium text-lg">{item}</p>
+                    <p className="text-petrol font-body font-medium text-base sm:text-lg">{item}</p>
                   </motion.div>
                 ))}
               </div>

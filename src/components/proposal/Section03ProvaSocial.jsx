@@ -13,7 +13,7 @@ export default function Section03ProvaSocial() {
       <OrganicLines variant="wave" className="top-0" />
 
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
-        <div className="flex flex-col lg:flex-row gap-12 items-center">
+        <div className="flex flex-col lg:flex-row gap-9 lg:gap-12 items-center">
           {/* Image */}
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
@@ -25,9 +25,9 @@ export default function Section03ProvaSocial() {
             <img
               src={IMG_LEADER}
               alt="Líder empresarial"
-              className="rounded-4xl object-cover h-[500px] w-full"
+              className="rounded-3xl sm:rounded-4xl object-cover h-[min(110vw,430px)] lg:h-[500px] w-full"
             />
-            <FloatingBadge text="30.000+ PESSOAS" size="md" className="absolute -bottom-6 -right-6 z-20" />
+            <FloatingBadge text="30.000+ PESSOAS" size="md" className="absolute -bottom-6 right-2 hidden sm:block lg:-right-6 z-20" />
           </motion.div>
 
           {/* Content */}
@@ -38,7 +38,7 @@ export default function Section03ProvaSocial() {
             viewport={{ once: true }}
             className="lg:w-7/12"
           >
-            <div className="bg-petrol rounded-4xl p-10 lg:p-14 relative overflow-hidden">
+            <div className="bg-petrol rounded-3xl p-6 sm:rounded-4xl sm:p-10 lg:p-14 relative overflow-hidden">
               <OrganicLines variant="corner-tr" className="opacity-20" />
 
               <img
@@ -46,7 +46,7 @@ export default function Section03ProvaSocial() {
                 alt="53 Anos Saltos del Guairá"
                 className="h-20 w-auto object-contain mb-4"
               />
-              <p className="text-coral font-heading font-extrabold text-7xl lg:text-8xl mb-4">
+              <p className="text-coral font-heading font-extrabold text-6xl sm:text-7xl lg:text-8xl mb-4">
                 +30K
               </p>
               <h2 className="font-heading font-extrabold text-3xl lg:text-4xl text-offwhite leading-tight mb-6">
