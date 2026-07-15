@@ -63,6 +63,9 @@ export default function Section10Comparativo() {
             <OrganicLines variant="corner-tr" className="opacity-20" />
             <p className="text-white/80 font-heading font-bold text-sm tracking-widest uppercase mb-2">SEU INVESTIMENTO NO PACOTE</p>
             <p className="text-white font-heading font-extrabold text-[clamp(2rem,10vw,3rem)] lg:text-7xl mb-2">Gs 5.000.000</p>
+            <p className="mx-auto max-w-xl font-body text-base font-semibold text-white sm:text-lg">
+              com direito a 10 pulseiras diárias para seus convidados!
+            </p>
             <div className="inline-block max-w-full bg-petrol rounded-2xl sm:rounded-full px-4 sm:px-6 py-2 mt-4">
               <span className="text-coral font-heading font-bold text-sm">ECONOMIA DE Gs 500.000+</span>
             </div>

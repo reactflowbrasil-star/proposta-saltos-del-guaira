@@ -67,6 +67,9 @@ export default function Section01Hero({ language = "pt" }) {
                 <p className="text-coral font-heading font-extrabold text-[clamp(1.75rem,9vw,2.25rem)] lg:text-4xl mt-1">
                   Gs 5.000.000
                 </p>
+                <p className="mt-2 max-w-xs font-body text-sm font-semibold leading-snug text-offwhite">
+                  com direito a 10 pulseiras diárias para seus convidados!
+                </p>
               </div>
               <p className="text-offwhite/55 font-body text-sm leading-relaxed max-w-xs">
                 Pacote completo com exposicao, coquetel VIP, networking e presenca durante os 7 dias.
