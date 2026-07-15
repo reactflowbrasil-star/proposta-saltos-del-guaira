@@ -76,6 +76,9 @@ export default function Section11Pacote() {
             <p className="text-coral font-heading font-extrabold text-5xl lg:text-7xl mb-1">
               Gs 5.000.000
             </p>
+            <p className="text-offwhite font-body font-semibold text-base sm:text-lg mb-1">
+              com direito a 10 pulseiras diárias para seus convidados!
+            </p>
             <p className="text-offwhite/40 font-body text-sm mb-8">Cinco Milhões de Guaranis</p>
             <p className="mb-5 font-body text-sm text-offwhite/70">
               Contato: <strong className="text-offwhite">{projectContact.name}</strong> · {projectContact.phone}
